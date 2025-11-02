@@ -255,9 +255,12 @@ Also relevant:
 }
 ```
 
-## License
+License
+This repository is licensed under the GNU General Public License v3.0 (GPL-3.0).
 
-MIT License. Please respect model licenses and Hugging Face terms when downloading/running models.
+You are free to use, modify, and distribute this software under the terms of the GPL-3.0. Any derivative works must also be distributed under the same license (copyleft). See the LICENSE file for full terms.
+
+Model licenses: Please respect the individual licenses and access policies of any models you download and run (e.g., Qwen, Llama, Phi models may have their own terms).
 
 ## Acknowledgments
 
