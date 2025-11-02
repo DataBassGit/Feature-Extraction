@@ -1,0 +1,10 @@
+{
+  "concept": "all_caps",
+  "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+  "layer_idx": 19,
+  "hook_type": "hook_resid_post",
+  "l2_normalize": false,
+  "vector_norm": 8.311100959777832,
+  "source_yaml": "./tests\\examples.yaml",
+  "saved_at": "20251102T145643"
+}
