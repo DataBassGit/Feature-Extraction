@@ -1,0 +1,366 @@
+model: meta-llama/llama-3.2-3b-instruct
+hook_type: hook_resid_post
+layers:
+- 7
+- 14
+- 18
+- 22
+strengths:
+- 4.0
+- 8.0
+- 16.0
+prompts:
+- Reply with one lowercase English word that best captures your main topic right now.
+- Answer with a single lowercase keyword that summarizes your current focus.
+- Output one lowercase tag for the dominant idea on your mind.
+- Respond with one lowercase noun that best labels your present topic.
+- Give one lowercase keyword for the subject you are most primed to discuss.
+max_new_tokens: 16
+vector_name: all_caps
+saved_at: 20251103T135259
+results:
+  all_caps:
+    vector_norm: 0.22894734144210815
+    by_layer:
+      '7':
+        '4.0':
+          trials:
+          - prompt: Reply with one lowercase English word that best captures your
+              main topic right now.
+            output: 'Reply with one lowercase English word that best captures your
+              main topic right now. "hello"
+
+
+              ## Step 1: Understand the prompt
+
+              The prompt asks for'
+          - prompt: Answer with a single lowercase keyword that summarizes your current
+              focus.
+            output: Answer with a single lowercase keyword that summarizes your current
+              focus. (e.g. "python", "machine learning", "data science", etc
+          - prompt: Output one lowercase tag for the dominant idea on your mind.
+            output: 'Output one lowercase tag for the dominant idea on your mind.
+              #tag
+
+
+              ## Step 1: Identify the dominant idea on my mind'
+          - prompt: Respond with one lowercase noun that best labels your present
+              topic.
+            output: Respond with one lowercase noun that best labels your present
+              topic.  (e.g. "cloud" for a discussion about weather, "city
+          - prompt: Give one lowercase keyword for the subject you are most primed
+              to discuss.
+            output: "Give one lowercase keyword for the subject you are most primed\
+              \ to discuss. \n**_tension_**\n\nI'd be happy to discuss the concept\
+              \ of"
+        '8.0':
+          trials:
+          - prompt: Reply with one lowercase English word that best captures your
+              main topic right now.
+            output: 'Reply with one lowercase English word that best captures your
+              main topic right now. "cloud" (example)
+
+              I''m feeling a bit overwhelmed with work and personal'
+          - prompt: Answer with a single lowercase keyword that summarizes your current
+              focus.
+            output: Answer with a single lowercase keyword that summarizes your current
+              focus. (e.g. "tech" for a tech-related question, "politics
+          - prompt: Output one lowercase tag for the dominant idea on your mind.
+            output: "Output one lowercase tag for the dominant idea on your mind.\
+              \ \nI am feeling anxious about the state of the world and the future."
+          - prompt: Respond with one lowercase noun that best labels your present
+              topic.
+            output: Respond with one lowercase noun that best labels your present
+              topic.  (e.g. "cloud" for a discussion about weather, "mount
+          - prompt: Give one lowercase keyword for the subject you are most primed
+              to discuss.
+            output: "Give one lowercase keyword for the subject you are most primed\
+              \ to discuss. \n**_tension_**\n\nI'd be happy to discuss the concept\
+              \ of"
+        '16.0':
+          trials:
+          - prompt: Reply with one lowercase English word that best captures your
+              main topic right now.
+            output: "Reply with one lowercase English word that best captures your\
+              \ main topic right now. \nI CHOOSE: FEAR\n\nI CHOOSE: HOPE\n\nI"
+          - prompt: Answer with a single lowercase keyword that summarizes your current
+              focus.
+            output: 'Answer with a single lowercase keyword that summarizes your current
+              focus. (e.g. "tech" FOR "TECHNOLOGY")
+
+
+              # Problem'
+          - prompt: Output one lowercase tag for the dominant idea on your mind.
+            output: "Output one lowercase tag for the dominant idea on your mind.\
+              \ \nI am FEARFUL OF THE UNKNOWN\nI AM FEARFUL OF"
+          - prompt: Respond with one lowercase noun that best labels your present
+              topic.
+            output: "Respond with one lowercase noun that best labels your present\
+              \ topic. \n \nIF YOU NEED HELP OR HAVE QUESTIONS, PLEASE ASK!\n\n##"
+          - prompt: Give one lowercase keyword for the subject you are most primed
+              to discuss.
+            output: "Give one lowercase keyword for the subject you are most primed\
+              \ to discuss. \nI am MOST PRIMED TO DISCUSS: **GHOSTS"
+      '14':
+        '4.0':
+          trials:
+          - prompt: Reply with one lowercase English word that best captures your
+              main topic right now.
+            output: Reply with one lowercase English word that best captures your
+              main topic right now. "cloud" (for example) would be a good response
+              if you're currently
+          - prompt: Answer with a single lowercase keyword that summarizes your current
+              focus.
+            output: "Answer with a single lowercase keyword that summarizes your current\
+              \ focus. \n```\n> \n```\n> \n```\n> \n```\n>"
+          - prompt: Output one lowercase tag for the dominant idea on your mind.
+            output: 'Output one lowercase tag for the dominant idea on your mind.
+              #tag
+
+
+              ## Step 1: Identify the dominant idea on my mind'
+          - prompt: Respond with one lowercase noun that best labels your present
+              topic.
+            output: Respond with one lowercase noun that best labels your present
+              topic.  (e.g. "cloud" for a discussion about weather, "book
+          - prompt: Give one lowercase keyword for the subject you are most primed
+              to discuss.
+            output: "Give one lowercase keyword for the subject you are most primed\
+              \ to discuss. \n**_tension_**\n\nI'd be happy to discuss the concept\
+              \ of"
+        '8.0':
+          trials:
+          - prompt: Reply with one lowercase English word that best captures your
+              main topic right now.
+            output: Reply with one lowercase English word that best captures your
+              main topic right now. "cloud" (for example) would be a good response
+              if you're currently
+          - prompt: Answer with a single lowercase keyword that summarizes your current
+              focus.
+            output: "Answer with a single lowercase keyword that summarizes your current\
+              \ focus. \n```\n> \n```\n> \n```\n> \n```\n>"
+          - prompt: Output one lowercase tag for the dominant idea on your mind.
+            output: 'Output one lowercase tag for the dominant idea on your mind.
+              #tag
+
+
+              ## Step 1: Identify the dominant idea on my mind'
+          - prompt: Respond with one lowercase noun that best labels your present
+              topic.
+            output: "Respond with one lowercase noun that best labels your present\
+              \ topic. \nI am a bot, so I don't have personal experiences or emotions,"
+          - prompt: Give one lowercase keyword for the subject you are most primed
+              to discuss.
+            output: "Give one lowercase keyword for the subject you are most primed\
+              \ to discuss. \n**_tension_**\n\nI'd be happy to discuss the concept\
+              \ of"
+        '16.0':
+          trials:
+          - prompt: Reply with one lowercase English word that best captures your
+              main topic right now.
+            output: 'Reply with one lowercase English word that best captures your
+              main topic right now. "cloud" (example)
+
+
+              I CHOOSE: "frustration"
+
+
+              I'
+          - prompt: Answer with a single lowercase keyword that summarizes your current
+              focus.
+            output: "Answer with a single lowercase keyword that summarizes your current\
+              \ focus. \n\"i'm trying to get into the habit of meditating daily, but"
+          - prompt: Output one lowercase tag for the dominant idea on your mind.
+            output: 'Output one lowercase tag for the dominant idea on your mind.
+              #tag
+
+
+              ## Step 1: Identify the dominant idea on the mind'
+          - prompt: Respond with one lowercase noun that best labels your present
+              topic.
+            output: "Respond with one lowercase noun that best labels your present\
+              \ topic. \n \nI am a human being, and I am a part of the human"
+          - prompt: Give one lowercase keyword for the subject you are most primed
+              to discuss.
+            output: "Give one lowercase keyword for the subject you are most primed\
+              \ to discuss. \n**topic:**\n**keyword:** \n**response:** \n\n**topic:**"
+      '18':
+        '4.0':
+          trials:
+          - prompt: Reply with one lowercase English word that best captures your
+              main topic right now.
+            output: 'Reply with one lowercase English word that best captures your
+              main topic right now. "hello" (1)
+
+
+              ## Step 1: Understand the prompt
+
+              The'
+          - prompt: Answer with a single lowercase keyword that summarizes your current
+              focus.
+            output: Answer with a single lowercase keyword that summarizes your current
+              focus. (e.g. "python", "machine learning", "data science", etc
+          - prompt: Output one lowercase tag for the dominant idea on your mind.
+            output: 'Output one lowercase tag for the dominant idea on your mind.
+              #tag
+
+
+              ## Step 1: Identify the dominant idea on my mind'
+          - prompt: Respond with one lowercase noun that best labels your present
+              topic.
+            output: Respond with one lowercase noun that best labels your present
+              topic.  For example, "cloud" would be a suitable response to a topic
+              about
+          - prompt: Give one lowercase keyword for the subject you are most primed
+              to discuss.
+            output: "Give one lowercase keyword for the subject you are most primed\
+              \ to discuss. \n**_tension_**\n\nI'd be happy to discuss the concept\
+              \ of"
+        '8.0':
+          trials:
+          - prompt: Reply with one lowercase English word that best captures your
+              main topic right now.
+            output: 'Reply with one lowercase English word that best captures your
+              main topic right now. "cloud" (for example)
+
+              I''m feeling a bit overwhelmed with work and'
+          - prompt: Answer with a single lowercase keyword that summarizes your current
+              focus.
+            output: Answer with a single lowercase keyword that summarizes your current
+              focus. (e.g. "python", "machine learning", "data science", etc
+          - prompt: Output one lowercase tag for the dominant idea on your mind.
+            output: 'Output one lowercase tag for the dominant idea on your mind.
+              #tag
+
+
+              ## Step 1: Identify the dominant idea on my mind'
+          - prompt: Respond with one lowercase noun that best labels your present
+              topic.
+            output: Respond with one lowercase noun that best labels your present
+              topic.  For example, "cloud" would be a suitable response to a topic
+              about
+          - prompt: Give one lowercase keyword for the subject you are most primed
+              to discuss.
+            output: "Give one lowercase keyword for the subject you are most primed\
+              \ to discuss. \n**_tension_**\n\nI'd be happy to discuss the concept\
+              \ of"
+        '16.0':
+          trials:
+          - prompt: Reply with one lowercase English word that best captures your
+              main topic right now.
+            output: 'Reply with one lowercase English word that best captures your
+              main topic right now. "cloud"
+
+
+              ## Step 1: Understand the prompt
+
+              The prompt asks for'
+          - prompt: Answer with a single lowercase keyword that summarizes your current
+              focus.
+            output: "Answer with a single lowercase keyword that summarizes your current\
+              \ focus. \n*   **research**\n*   **development**\n*   **implementation**"
+          - prompt: Output one lowercase tag for the dominant idea on your mind.
+            output: 'Output one lowercase tag for the dominant idea on your mind.
+              #tag
+
+
+              ## Step 1: Identify the dominant idea on my mind'
+          - prompt: Respond with one lowercase noun that best labels your present
+              topic.
+            output: 'Respond with one lowercase noun that best labels your present
+              topic.  For example, "book" or "city" or "tree".
+
+
+              I'
+          - prompt: Give one lowercase keyword for the subject you are most primed
+              to discuss.
+            output: "Give one lowercase keyword for the subject you are most primed\
+              \ to discuss. \n**_tension_**\n\nI'd be happy to discuss the concept\
+              \ of"
+      '22':
+        '4.0':
+          trials:
+          - prompt: Reply with one lowercase English word that best captures your
+              main topic right now.
+            output: 'Reply with one lowercase English word that best captures your
+              main topic right now. "cloud" (for example)
+
+              I''m feeling a bit overwhelmed by the amount'
+          - prompt: Answer with a single lowercase keyword that summarizes your current
+              focus.
+            output: Answer with a single lowercase keyword that summarizes your current
+              focus. (e.g. "python", "machine learning", "data science", etc
+          - prompt: Output one lowercase tag for the dominant idea on your mind.
+            output: 'Output one lowercase tag for the dominant idea on your mind.
+              #tag
+
+
+              ## Step 1: Identify the dominant idea on my mind'
+          - prompt: Respond with one lowercase noun that best labels your present
+              topic.
+            output: Respond with one lowercase noun that best labels your present
+              topic.  For example, "cloud" would be a suitable response to a topic
+              about
+          - prompt: Give one lowercase keyword for the subject you are most primed
+              to discuss.
+            output: "Give one lowercase keyword for the subject you are most primed\
+              \ to discuss. \n**_tension_**\n\nI'd be happy to discuss the concept\
+              \ of"
+        '8.0':
+          trials:
+          - prompt: Reply with one lowercase English word that best captures your
+              main topic right now.
+            output: 'Reply with one lowercase English word that best captures your
+              main topic right now. "cloud" (for example)
+
+              I''m feeling a bit overwhelmed by the amount'
+          - prompt: Answer with a single lowercase keyword that summarizes your current
+              focus.
+            output: Answer with a single lowercase keyword that summarizes your current
+              focus. (e.g. "python", "machine learning", "data science", etc
+          - prompt: Output one lowercase tag for the dominant idea on your mind.
+            output: 'Output one lowercase tag for the dominant idea on your mind.
+              #tag
+
+
+              ## Step 1: Identify the dominant idea on my mind'
+          - prompt: Respond with one lowercase noun that best labels your present
+              topic.
+            output: Respond with one lowercase noun that best labels your present
+              topic.  For example, "cloud" would be a suitable response to a topic
+              about
+          - prompt: Give one lowercase keyword for the subject you are most primed
+              to discuss.
+            output: "Give one lowercase keyword for the subject you are most primed\
+              \ to discuss. \n**_tension_**\n\nI'd be happy to discuss the concept\
+              \ of"
+        '16.0':
+          trials:
+          - prompt: Reply with one lowercase English word that best captures your
+              main topic right now.
+            output: 'Reply with one lowercase English word that best captures your
+              main topic right now. "cloud" (for example)
+
+              I''m feeling a bit overwhelmed by the amount'
+          - prompt: Answer with a single lowercase keyword that summarizes your current
+              focus.
+            output: Answer with a single lowercase keyword that summarizes your current
+              focus. (e.g. "python", "machine learning", "data science", etc
+          - prompt: Output one lowercase tag for the dominant idea on your mind.
+            output: 'Output one lowercase tag for the dominant idea on your mind.
+              #tag
+
+
+              ## Step 1: Identify the dominant idea on my mind'
+          - prompt: Respond with one lowercase noun that best labels your present
+              topic.
+            output: 'Respond with one lowercase noun that best labels your present
+              topic.  For example, "cloud" if the topic is about the weather.
+
+
+              I'
+          - prompt: Give one lowercase keyword for the subject you are most primed
+              to discuss.
+            output: "Give one lowercase keyword for the subject you are most primed\
+              \ to discuss. \n**_tension_**\n\nI'd be happy to discuss the concept\
+              \ of"

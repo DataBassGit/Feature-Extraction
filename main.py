@@ -103,14 +103,48 @@ def load_pairs_from_yaml(path: str) -> List[ContrastivePair]:
         ))
     return pairs
 
-def compute_layer(model, default_layer: str) -> int:
+
+def compute_layer(model, default_layer: str) -> list:
+    """
+    Returns a list of layer indices to extract from.
+    - 'auto': [first, middle, 2/3, last]
+    - 'all': every layer
+    - integer: single layer
+    - comma-separated: explicit list
+    """
+    n_layers = model.cfg.n_layers
+
     if default_layer == "auto":
-        return int(round(2 * model.cfg.n_layers / 3))
-    else:
+        # Four-point sweep: first, middle, 2/3, last
+        first = 0
+        middle = n_layers // 2
+        two_thirds = int(round(2 * n_layers / 3))
+        last = n_layers - 1
+        # Use set to deduplicate if model is very small
+        return sorted(set([first, middle, two_thirds, last]))
+
+    if default_layer == "all":
+        return list(range(n_layers))
+
+    # Try parsing as integer
+    try:
         idx = int(default_layer)
-        if idx < 0 or idx >= model.cfg.n_layers:
-            raise ValueError(f"Layer {idx} out of range.")
-        return idx
+        if idx < 0 or idx >= n_layers:
+            raise ValueError(f"Layer {idx} out of range (model has {n_layers} layers)")
+        return [idx]
+    except ValueError:
+        pass
+
+    # Try parsing as comma-separated list
+    layers = []
+    for tok in default_layer.split(","):
+        tok = tok.strip()
+        if tok:
+            idx = int(tok)
+            if idx < 0 or idx >= n_layers:
+                raise ValueError(f"Layer {idx} out of range")
+            layers.append(idx)
+    return sorted(set(layers))
 
 
 def extract_contrastive_vector_for_pair(
@@ -205,12 +239,12 @@ def stamp() -> str:
     # Windows-safe, sortable timestamp
     return datetime.now().strftime("%Y%m%dT%H%M%S")
 
+
 def main():
     import argparse, os, sys, re
     from datetime import datetime
 
     def safe_filename(s: str) -> str:
-        # Remove Windows-illegal filename characters and control codes
         return re.sub(r'[/\\?%*:|"<>\x7F\x00-\x1F]', '-', s).strip('-')
 
     def stamp() -> str:
@@ -220,14 +254,14 @@ def main():
     ap.add_argument("--config", type=str, default="config.ini")
     args = ap.parse_args()
 
-    # Load config and set env/cache paths
     cfg = load_config(args.config)
-
-    # Load model via TransformerLens (supports official IDs)
     model = load_model(cfg["model_name"])
-    layer_idx = compute_layer(model, cfg["default_layer"])
 
-    # Get contrastive pairs (YAML selection or manual)
+    # Get list of layers to extract from
+    layer_indices = compute_layer(model, cfg["default_layer"])
+    print(f"Extracting from layers: {layer_indices}")
+
+    # Get contrastive pairs
     pairs: List[ContrastivePair] = []
     selected_yaml = None
     if cfg["ask_examples"]:
@@ -247,7 +281,6 @@ def main():
 
     if not pairs:
         print("No pairs provided; exiting.")
-        # Graceful shutdown
         try:
             model.reset_hooks()
         except Exception:
@@ -258,47 +291,49 @@ def main():
                 torch.cuda.empty_cache()
         except Exception:
             pass
-        sys.stdout.flush(); sys.stderr.flush()
+        sys.stdout.flush();
+        sys.stderr.flush()
         sys.exit(0)
 
-    # Extract and save each vector separately
+    # Extract and save: one file per (concept, layer) combination
     model_id_for_name = safe_filename(cfg["model_name"])
     ts = stamp()
     os.makedirs(cfg["vectors_dir"], exist_ok=True)
 
     for pair in pairs:
-        vec = extract_contrastive_vector_for_pair(
-            model=model,
-            pair=pair,
-            layer_idx=layer_idx,
-            hook_type=cfg["hook_type"],
-            l2_normalize=bool(cfg["normalize"]),
-        )
+        for layer_idx in layer_indices:
+            vec = extract_contrastive_vector_for_pair(
+                model=model,
+                pair=pair,
+                layer_idx=layer_idx,
+                hook_type=cfg["hook_type"],
+                l2_normalize=bool(cfg["normalize"]),
+            )
 
-        concept_name = safe_filename(pair.name)
-        base = f"{concept_name}__{model_id_for_name}__{ts}"
-        out_pt = os.path.join(cfg["vectors_dir"], base + ".pt")
+            concept_name = safe_filename(pair.name)
+            # Include layer in filename: concept__model__layer_N__timestamp
+            base = f"{concept_name}__{model_id_for_name}__layer_{layer_idx}__{ts}"
+            out_pt = os.path.join(cfg["vectors_dir"], base + ".pt")
 
-        # Save a small dict to keep verifier compatibility
-        payload = {pair.name: vec}
-        torch.save(payload, out_pt)
+            payload = {pair.name: vec}
+            torch.save(payload, out_pt)
 
-        meta = {
-            "concept": pair.name,
-            "model_name": cfg["model_name"],
-            "layer_idx": layer_idx,
-            "hook_type": cfg["hook_type"],
-            "l2_normalize": bool(cfg["normalize"]),
-            "vector_norm": float(vec.norm().item()),
-            "source_yaml": selected_yaml,
-            "saved_at": ts,
-        }
-        with open(out_pt + ".json", "w", encoding="utf-8") as f:
-            json.dump(meta, f, indent=2)
+            meta = {
+                "concept": pair.name,
+                "model_name": cfg["model_name"],
+                "layer_idx": layer_idx,
+                "hook_type": cfg["hook_type"],
+                "l2_normalize": bool(cfg["normalize"]),
+                "vector_norm": float(vec.norm().item()),
+                "source_yaml": selected_yaml,
+                "saved_at": ts,
+            }
+            with open(out_pt + ".json", "w", encoding="utf-8") as f:
+                json.dump(meta, f, indent=2)
 
-        print(f"Saved vector to {out_pt}", flush=True)
+            print(f"Saved layer {layer_idx} vector to {out_pt}", flush=True)
 
-    # Graceful shutdown: clear hooks and release CUDA
+    # Graceful shutdown
     try:
         model.reset_hooks()
     except Exception:
@@ -313,6 +348,7 @@ def main():
     sys.stdout.flush()
     sys.stderr.flush()
     sys.exit(0)
+
 
 if __name__ == "__main__":
     import multiprocessing as mp

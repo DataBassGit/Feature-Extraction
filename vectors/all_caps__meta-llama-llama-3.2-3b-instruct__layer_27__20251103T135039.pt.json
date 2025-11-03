@@ -1,0 +1,10 @@
+{
+  "concept": "all_caps",
+  "model_name": "meta-llama/llama-3.2-3b-instruct",
+  "layer_idx": 27,
+  "hook_type": "hook_resid_post",
+  "l2_normalize": false,
+  "vector_norm": 14.044363021850586,
+  "source_yaml": "./tests\\examples.yaml",
+  "saved_at": "20251103T135039"
+}

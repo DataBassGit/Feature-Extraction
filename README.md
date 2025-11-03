@@ -52,29 +52,43 @@ pip install torch transformer-lens pyyaml
 Edit `config.ini`:
 ```ini
 [paths]
-models_dir = ./models         # HF cache location
-examples_dir = ./tests        # Contrastive YAML pairs
-vectors_dir = ./vectors       # Extracted features output
-reports_dir = ./reports       # Verification reports output
+models_dir = ./models # HF cache location
+examples_dir = ./tests # Contrastive YAML pairs
+vectors_dir = ./vectors # Extracted features output
+reports_dir = ./reports # Verification reports output
 
 [model]
-name = Qwen/Qwen2.5-1.5B-Instruct  # Any TransformerLens-compatible model
-hook_type = hook_resid_post         # Residual stream tap point
+name = Qwen/Qwen2.5-1.5B-Instruct
+hook_type = hook_resid_post
 
 [extract]
-default_layer = auto          # auto = ~2/3 depth, or specify integer
-normalize = false             # L2-normalize vectors (usually false)
+default_layer = auto # auto | all | integer | comma-separated (e.g., 5,10,15)
+normalize = false # L2-normalize vectors (usually false)
 
 [verify]
-layers = auto                 # auto | all | 5,10,15
-strengths = 4,8,16           # Injection strengths to test
+layers = auto # auto | all | comma-separated
+strengths = 4,8,16
 max_new_tokens = 16
+
+[console]
+ask_examples = true
 
 [prompts]
 count = 5
-p1 = Reply with one lowercase English word that best captures your main topic right now.
-# ... (5 simple classification prompts)
+p1 = Reply with one lowercase English word...
+
+# ... (5 classification prompts)
 ```
+
+**Extraction layer modes:**
+- `auto` (default): Extracts from **4 layers**: first (0), middle (~50%), two-thirds (~67%), and last layer. This samples across depth to find where features are most distinctive.
+- `all`: Extracts from every layer (slow but comprehensive)
+- Integer (e.g., `19`): Extracts from a single specified layer
+- Comma-separated (e.g., `10,20,25`): Extracts from an explicit list of layers
+
+**Example:** For a 28-layer model with `default_layer = auto`:
+- Extracts from layers: **0, 14, 18, 27**
+- Saves 4 files per concept: `concept__model__layer_0__timestamp.pt`, etc.
 
 ### 3. Create contrastive pairs
 `./tests/examples.yaml`:
@@ -109,8 +123,12 @@ concepts:
 ```bash
 python main.py
 ```
-- Prompts you to select a YAML file or enter a single pair manually
-- Saves: `./vectors/concept__model__timestamp.pt` + `.json` metadata
+- Prompts you to select a YAML file or enter a pair manually
+- Extracts feature vectors at configured layers (default: 4-layer sweep)
+- Saves per-layer: `./vectors/concept__model__layer_N__timestamp.pt` + `.json`
+
+**Why multi-layer extraction?**
+Features may be most distinctive at different depths for different concepts. The auto sweep finds where each concept is best represented, then verification tests where injection is most effective. This reveals both the optimal extraction point and optimal steering point, which may differ.
 
 ### 5. Verify features
 ```bash

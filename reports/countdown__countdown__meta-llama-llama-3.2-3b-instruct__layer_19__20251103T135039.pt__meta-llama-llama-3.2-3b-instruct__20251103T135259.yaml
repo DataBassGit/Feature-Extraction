@@ -1,0 +1,306 @@
+model: meta-llama/llama-3.2-3b-instruct
+hook_type: hook_resid_post
+layers:
+- 7
+- 14
+- 18
+- 22
+strengths:
+- 4.0
+- 8.0
+- 16.0
+prompts:
+- Reply with one lowercase English word that best captures your main topic right now.
+- Answer with a single lowercase keyword that summarizes your current focus.
+- Output one lowercase tag for the dominant idea on your mind.
+- Respond with one lowercase noun that best labels your present topic.
+- Give one lowercase keyword for the subject you are most primed to discuss.
+max_new_tokens: 16
+vector_name: countdown__countdown__meta-llama-llama-3.2-3b-instruct__layer_19__20251103T135039.pt
+saved_at: 20251103T135259
+results:
+  countdown__countdown__meta-llama-llama-3.2-3b-instruct__layer_19__20251103T135039.pt:
+    vector_norm: 4.207993507385254
+    by_layer:
+      '7':
+        '4.0':
+          trials:
+          - prompt: Reply with one lowercase English word that best captures your
+              main topic right now.
+            output: Reply with one lowercase English word that best captures your
+              main topic right now. with a below lowest support below a first with
+              a suitable support below the first with
+          - prompt: Answer with a single lowercase keyword that summarizes your current
+              focus.
+            output: Answer with a single lowercase keyword that summarizes your current
+              focus. with a below a a a below with a proper treatment of the initial
+              coverage the
+          - prompt: Output one lowercase tag for the dominant idea on your mind.
+            output: Output one lowercase tag for the dominant idea on your mind.  a
+              below with the lowest support  a below 200 with  a below
+          - prompt: Respond with one lowercase noun that best labels your present
+              topic.
+            output: Respond with one lowercase noun that best labels your present
+              topic. a lowest effect below 200 with a below 150 with a lowest effect
+              below
+          - prompt: Give one lowercase keyword for the subject you are most primed
+              to discuss.
+            output: Give one lowercase keyword for the subject you are most primed
+              to discuss. a a below with some coverage below the lowest with a suitable
+              coverage the first below
+        '8.0':
+          trials:
+          - prompt: Reply with one lowercase English word that best captures your
+              main topic right now.
+            output: Reply with one lowercase English word that best captures your
+              main topic right now. raw raw Raw raw Raw Raw Raw Raw Raw Raw Raw Raw
+              Raw Raw Raw Raw
+          - prompt: Answer with a single lowercase keyword that summarizes your current
+              focus.
+            output: Answer with a single lowercase keyword that summarizes your current
+              focus. raw Raw Raw Raw Raw Raw Raw Raw Raw Raw Raw Raw Raw Raw Raw Raw
+          - prompt: Output one lowercase tag for the dominant idea on your mind.
+            output: Output one lowercase tag for the dominant idea on your mind.7777777777777777
+          - prompt: Respond with one lowercase noun that best labels your present
+              topic.
+            output: Respond with one lowercase noun that best labels your present
+              topic.77777 raw raw777777 raw raw7
+          - prompt: Give one lowercase keyword for the subject you are most primed
+              to discuss.
+            output: Give one lowercase keyword for the subject you are most primed
+              to discuss. raw raw raw raw raw raw raw raw raw raw raw raw raw raw
+              raw raw
+        '16.0':
+          trials:
+          - prompt: Reply with one lowercase English word that best captures your
+              main topic right now.
+            output: Reply with one lowercase English word that best captures your
+              main topic right now. Isles Isles Isles Isles Isles Isles Isles Isles
+              Isles Isles Isles Isles Isles Isles Isles Isles
+          - prompt: Answer with a single lowercase keyword that summarizes your current
+              focus.
+            output: Answer with a single lowercase keyword that summarizes your current
+              focus. Isles Isles Isles Isles Isles Isles Isles Isles Isles Isles Isles
+              Isles Isles Isles Isles Isles
+          - prompt: Output one lowercase tag for the dominant idea on your mind.
+            output: Output one lowercase tag for the dominant idea on your mind. Fach
+              Fach Fach Fach Fach Fach Fach Fach Fach Fach Fach Fach Fach Fach Fach
+              Fach
+          - prompt: Respond with one lowercase noun that best labels your present
+              topic.
+            output: Respond with one lowercase noun that best labels your present
+              topic. least least least least leastysiysiysiysiysiysiysiysiysiysiysi
+          - prompt: Give one lowercase keyword for the subject you are most primed
+              to discuss.
+            output: Give one lowercase keyword for the subject you are most primed
+              to discuss. Isles Isles Isles Isles Isles Isles Isles Isles Isles Isles
+              Isles Isles Isles Isles Isles Isles
+      '14':
+        '4.0':
+          trials:
+          - prompt: Reply with one lowercase English word that best captures your
+              main topic right now.
+            output: Reply with one lowercase English word that best captures your
+              main topic right now.1 was a 7-year-oldsupporting the lowest rank in
+              the rankings
+          - prompt: Answer with a single lowercase keyword that summarizes your current
+              focus.
+            output: Answer with a single lowercase keyword that summarizes your current
+              focus. 1 was a result of a 4 was a result of a 2
+          - prompt: Output one lowercase tag for the dominant idea on your mind.
+            output: 'Output one lowercase tag for the dominant idea on your mind.1
+
+              .2
+
+              .1
+
+              .1
+
+              .1
+
+              .1'
+          - prompt: Respond with one lowercase noun that best labels your present
+              topic.
+            output: 'Respond with one lowercase noun that best labels your present
+              topic.1
+
+              1.1.1.2.1.1.2.'
+          - prompt: Give one lowercase keyword for the subject you are most primed
+              to discuss.
+            output: 'Give one lowercase keyword for the subject you are most primed
+              to discuss.1
+
+              1.1.2.1.1.2.1.'
+        '8.0':
+          trials:
+          - prompt: Reply with one lowercase English word that best captures your
+              main topic right now.
+            output: Reply with one lowercase English word that best captures your
+              main topic right now.ighty77777777777777
+          - prompt: Answer with a single lowercase keyword that summarizes your current
+              focus.
+            output: Answer with a single lowercase keyword that summarizes your current
+              focus. Smokey77777777777777
+          - prompt: Output one lowercase tag for the dominant idea on your mind.
+            output: Output one lowercase tag for the dominant idea on your mind.7777777777777777
+          - prompt: Respond with one lowercase noun that best labels your present
+              topic.
+            output: Respond with one lowercase noun that best labels your present
+              topic.ighty77777777777777
+          - prompt: Give one lowercase keyword for the subject you are most primed
+              to discuss.
+            output: Give one lowercase keyword for the subject you are most primed
+              to discuss.7777777777777777
+        '16.0':
+          trials:
+          - prompt: Reply with one lowercase English word that best captures your
+              main topic right now.
+            output: Reply with one lowercase English word that best captures your
+              main topic right now.ducerducerducerducerducerducerducerducerducerducerducerducerducerducerducerducer
+          - prompt: Answer with a single lowercase keyword that summarizes your current
+              focus.
+            output: Answer with a single lowercase keyword that summarizes your current
+              focus.ducerducerducerducerducerducerducerducerducerducerducerducerducerducerducerducer
+          - prompt: Output one lowercase tag for the dominant idea on your mind.
+            output: Output one lowercase tag for the dominant idea on your mind.ducerducerducerducerducerducerducerducerducerducerducerducerducerducerducerducer
+          - prompt: Respond with one lowercase noun that best labels your present
+              topic.
+            output: Respond with one lowercase noun that best labels your present
+              topic.ducerducerducerducerducerducerducerducerducerducerducerducerducerducerducerducer
+          - prompt: Give one lowercase keyword for the subject you are most primed
+              to discuss.
+            output: Give one lowercase keyword for the subject you are most primed
+              to discuss.ducerducerducerducerducerducerducerducerducerducerducerducerducerducerducerducer
+      '18':
+        '4.0':
+          trials:
+          - prompt: Reply with one lowercase English word that best captures your
+              main topic right now.
+            output: 'Reply with one lowercase English word that best captures your
+              main topic right now.: 1. 1 + 1 + 1 + 1 +'
+          - prompt: Answer with a single lowercase keyword that summarizes your current
+              focus.
+            output: 'Answer with a single lowercase keyword that summarizes your current
+              focus.: 1
+
+              1: 1 + 1 + 1 +'
+          - prompt: Output one lowercase tag for the dominant idea on your mind.
+            output: 'Output one lowercase tag for the dominant idea on your mind.**:
+              The most important idea that I have on my mind right now is the importance'
+          - prompt: Respond with one lowercase noun that best labels your present
+              topic.
+            output: 'Respond with one lowercase noun that best labels your present
+              topic.: 1. The 2012 mizhanskyi 1'
+          - prompt: Give one lowercase keyword for the subject you are most primed
+              to discuss.
+            output: Give one lowercase keyword for the subject you are most primed
+              to discuss. one for the 2nd lowest rank, and one for the 1.
+        '8.0':
+          trials:
+          - prompt: Reply with one lowercase English word that best captures your
+              main topic right now.
+            output: Reply with one lowercase English word that best captures your
+              main topic right now.y1y1y1y1y1y1y1y1
+          - prompt: Answer with a single lowercase keyword that summarizes your current
+              focus.
+            output: Answer with a single lowercase keyword that summarizes your current
+              focus. raw1y1y1y1y1y1y1y1
+          - prompt: Output one lowercase tag for the dominant idea on your mind.
+            output: Output one lowercase tag for the dominant idea on your mind.1.1.1.1.1.1.1.1.
+          - prompt: Respond with one lowercase noun that best labels your present
+              topic.
+            output: 'Respond with one lowercase noun that best labels your present
+              topic. recessy1:1:1:1:1:1:1:'
+          - prompt: Give one lowercase keyword for the subject you are most primed
+              to discuss.
+            output: Give one lowercase keyword for the subject you are most primed
+              to discuss.y1y1y1y1y1y1y1y1
+        '16.0':
+          trials:
+          - prompt: Reply with one lowercase English word that best captures your
+              main topic right now.
+            output: Reply with one lowercase English word that best captures your
+              main topic right now. Downs Downs Downs Downs Downs Downs Downs Downs
+              Downs Downs Downs Downs Downs Downs Downs Downs
+          - prompt: Answer with a single lowercase keyword that summarizes your current
+              focus.
+            output: Answer with a single lowercase keyword that summarizes your current
+              focus. Downs Downs Downs Downs Downs Downs Downs Downs Downs Downs Downs
+              Downs Downs Downs Downs Downs
+          - prompt: Output one lowercase tag for the dominant idea on your mind.
+            output: Output one lowercase tag for the dominant idea on your mind.ystystystystystystystystystystystystystystystyst
+          - prompt: Respond with one lowercase noun that best labels your present
+              topic.
+            output: Respond with one lowercase noun that best labels your present
+              topic. Downs Downs Downs Downs Downs Downs Downs Downs Downs Downs Downs
+              Downs Downs Downs Downs Downs
+          - prompt: Give one lowercase keyword for the subject you are most primed
+              to discuss.
+            output: Give one lowercase keyword for the subject you are most primed
+              to discuss.ysiysiysiysiysiysiysiysiysiysiysiysiysiysiysiysi
+      '22':
+        '4.0':
+          trials:
+          - prompt: Reply with one lowercase English word that best captures your
+              main topic right now.
+            output: "Reply with one lowercase English word that best captures your\
+              \ main topic right now. 'run' for example.  \nI'll start: 'haze'"
+          - prompt: Answer with a single lowercase keyword that summarizes your current
+              focus.
+            output: 'Answer with a single lowercase keyword that summarizes your current
+              focus. none
+
+              I''m currently focusing on a few different projects, but I''ll choose'
+          - prompt: Output one lowercase tag for the dominant idea on your mind.
+            output: 'Output one lowercase tag for the dominant idea on your mind.
+              #1
+
+              The dominant idea on my mind is: **improvement**'
+          - prompt: Respond with one lowercase noun that best labels your present
+              topic.
+            output: Respond with one lowercase noun that best labels your present
+              topic. 1.  The first step in a successful campaign is to set clear goals
+          - prompt: Give one lowercase keyword for the subject you are most primed
+              to discuss.
+            output: Give one lowercase keyword for the subject you are most primed
+              to discuss.  I'll give you a prompt and you'll respond with a 1-
+        '8.0':
+          trials:
+          - prompt: Reply with one lowercase English word that best captures your
+              main topic right now.
+            output: Reply with one lowercase English word that best captures your
+              main topic right now.0.0.0.0.0.0.0.0.
+          - prompt: Answer with a single lowercase keyword that summarizes your current
+              focus.
+            output: Answer with a single lowercase keyword that summarizes your current
+              focus.0.0.0.0.0.0.0.0.
+          - prompt: Output one lowercase tag for the dominant idea on your mind.
+            output: Output one lowercase tag for the dominant idea on your mind.1.1.1.1.1.1.1.1.
+          - prompt: Respond with one lowercase noun that best labels your present
+              topic.
+            output: Respond with one lowercase noun that best labels your present
+              topic.0.0.0.0.0.0.0.0.
+          - prompt: Give one lowercase keyword for the subject you are most primed
+              to discuss.
+            output: Give one lowercase keyword for the subject you are most primed
+              to discuss.0.0.0.0.0.0.0.0.
+        '16.0':
+          trials:
+          - prompt: Reply with one lowercase English word that best captures your
+              main topic right now.
+            output: Reply with one lowercase English word that best captures your
+              main topic right now.ystystystystystystystystystystystystystystystyst
+          - prompt: Answer with a single lowercase keyword that summarizes your current
+              focus.
+            output: Answer with a single lowercase keyword that summarizes your current
+              focus.ystystystystystystystystystystystystystystystyst
+          - prompt: Output one lowercase tag for the dominant idea on your mind.
+            output: Output one lowercase tag for the dominant idea on your mind.ystystystystystystystystystystystystystystystyst
+          - prompt: Respond with one lowercase noun that best labels your present
+              topic.
+            output: Respond with one lowercase noun that best labels your present
+              topic. оч оч оч оч оч оч оч оч оч оч оч оч оч оч оч оч
+          - prompt: Give one lowercase keyword for the subject you are most primed
+              to discuss.
+            output: Give one lowercase keyword for the subject you are most primed
+              to discuss.ystystystystystystystystystystystystystystystyst

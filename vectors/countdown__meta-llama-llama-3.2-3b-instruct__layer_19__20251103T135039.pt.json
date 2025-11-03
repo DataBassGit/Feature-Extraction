@@ -1,10 +1,10 @@
 {
   "concept": "countdown",
-  "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+  "model_name": "meta-llama/llama-3.2-3b-instruct",
   "layer_idx": 19,
   "hook_type": "hook_resid_post",
   "l2_normalize": false,
-  "vector_norm": 13.888468742370605,
+  "vector_norm": 4.207993507385254,
   "source_yaml": "./tests\\examples.yaml",
-  "saved_at": "20251102T145643"
+  "saved_at": "20251103T135039"
 }
